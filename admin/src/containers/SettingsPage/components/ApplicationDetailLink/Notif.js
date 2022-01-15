@@ -5,13 +5,13 @@ const Notif = styled.div`
   margin-right: 15px;
 
   &:before {
-    content: '';
+    content: "";
     display: flex;
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background-color: #007dff;
+    background-color: #c128f7;
   }
-`;
+`
 
 export default Notif;

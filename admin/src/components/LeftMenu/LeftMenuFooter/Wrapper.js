@@ -24,10 +24,10 @@ const Wrapper = styled.div`
 
 const A = styled.a`
   &:hover {
-    color: #007bff;
+    color: #c128f7;
     text-decoration: underline;
   }
-`;
+`
 
 Wrapper.defaultProps = {
   theme: {

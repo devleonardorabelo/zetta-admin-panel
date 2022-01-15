@@ -63,18 +63,18 @@ function ListView() {
 
   const newButtonProps = {
     label: addBtnLabel,
-    onClick: () => handleGoTo('create'),
-    color: 'primary',
-    type: 'button',
-    icon: <Plus fill="#007eff" width="11px" height="11px" />,
-    Component: props => {
+    onClick: () => handleGoTo("create"),
+    color: "primary",
+    type: "button",
+    icon: <Plus fill="#C128F7" width="11px" height="11px" />,
+    Component: (props) => {
       if (canCreate) {
-        return <Button {...props} />;
+        return <Button {...props} />
       }
 
-      return null;
+      return null
     },
-  };
+  }
 
   // Header props
   const actions = [

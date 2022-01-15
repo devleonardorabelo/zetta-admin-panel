@@ -76,54 +76,68 @@ const HeadersInput = ({ errors, name, onClick, onChange, onRemove, value }) => {
         <li>
           <section>
             <p>
-              <FormattedMessage id="Settings.webhooks.key" defaultMessage="Key" />
+              <FormattedMessage
+                id="Settings.webhooks.key"
+                defaultMessage="Key"
+              />
             </p>
           </section>
           <section>
             <p>
-              <FormattedMessage id="Settings.webhooks.value" defaultMessage="Value" />
+              <FormattedMessage
+                id="Settings.webhooks.value"
+                defaultMessage="Value"
+              />
             </p>
           </section>
         </li>
         {value.map((header, index) => {
-          const { key, value } = header;
+          const { key, value } = header
 
           return (
             <li key={index}>
               <section>
                 <CreatableSelect
                   isClearable
-                  onChange={e => handleChangeKey(e, `${name}.${index}.key`)}
+                  onChange={(e) => handleChangeKey(e, `${name}.${index}.key`)}
                   name={`${name}.${index}.key`}
                   options={options}
-                  styles={customStyles(get(errors, `headers.${index}.key`, null))}
+                  styles={customStyles(
+                    get(errors, `headers.${index}.key`, null)
+                  )}
                   value={formatOption(key)}
                 />
               </section>
               <section>
                 <InputText
-                  className={get(errors, `headers.${index}.value`, null) && 'bordered'}
+                  className={
+                    get(errors, `headers.${index}.value`, null) && "bordered"
+                  }
                   onChange={onChange}
                   name={`${name}.${index}.value`}
                   value={value}
                 />
               </section>
               <div>
-                <CircleButton type="button" isRemoveButton onClick={() => onRemove(index)} />
+                <CircleButton
+                  type="button"
+                  isRemoveButton
+                  onClick={() => onRemove(index)}
+                />
               </div>
             </li>
-          );
+          )
         })}
       </ul>
       <button onClick={() => onClick(name)} type="button">
-        <Plus fill="#007eff" width="10px" />
+        <Plus fill="#C128F7" width="10px" />
         <FormattedMessage
           id="Settings.webhooks.create.header"
           defaultMessage="Create a new header"
         />
       </button>
     </Wrapper>
-  );
+  )
 };
 
 HeadersInput.defaultProps = {

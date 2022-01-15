@@ -181,13 +181,13 @@ const RoleListPage = () => {
       <Header
         title={{
           label: formatMessage({
-            id: 'Settings.roles.title',
-            defaultMessage: 'roles',
+            id: "Settings.roles.title",
+            defaultMessage: "roles",
           }),
         }}
         content={formatMessage({
-          id: 'Settings.roles.list.description',
-          defaultMessage: 'List of roles',
+          id: "Settings.roles.list.description",
+          defaultMessage: "List of roles",
         })}
         actions={headerActions}
         isLoading={isLoading}
@@ -198,8 +198,12 @@ const RoleListPage = () => {
           <List
             title={formatMessage(
               {
-                id: `Settings.roles.list.title${resultsCount > 1 ? '.plural' : '.singular'}`,
-                defaultMessage: `{number} ${resultsCount > 1 ? 'roles' : 'role'}`,
+                id: `Settings.roles.list.title${
+                  resultsCount > 1 ? ".plural" : ".singular"
+                }`,
+                defaultMessage: `{number} ${
+                  resultsCount > 1 ? "roles" : "role"
+                }`,
               },
               { number: resultsCount }
             )}
@@ -208,17 +212,20 @@ const RoleListPage = () => {
             button={
               canDelete
                 ? {
-                    color: 'delete',
+                    color: "delete",
                     disabled: selectedRoles.length === 0,
-                    label: formatMessage({ id: 'app.utils.delete', defaultMessage: 'Delete' }),
+                    label: formatMessage({
+                      id: "app.utils.delete",
+                      defaultMessage: "Delete",
+                    }),
                     onClick: handleToggleModal,
-                    type: 'button',
+                    type: "button",
                   }
                 : null
             }
             /* eslint-enable indent */
             items={results}
-            customRowComponent={role => (
+            customRowComponent={(role) => (
               <RoleRow
                 canCreate={canCreate}
                 canDelete={canDelete}
@@ -236,10 +243,10 @@ const RoleListPage = () => {
             <ListButton>
               <Button
                 onClick={handleNewRoleClick}
-                icon={<Plus fill="#007eff" width="11px" height="11px" />}
+                icon={<Plus fill="#C128F7" width="11px" height="11px" />}
                 label={formatMessage({
-                  id: 'Settings.roles.list.button.add',
-                  defaultMessage: 'Add new role',
+                  id: "Settings.roles.list.button.add",
+                  defaultMessage: "Add new role",
                 })}
               />
             </ListButton>
@@ -254,7 +261,7 @@ const RoleListPage = () => {
         isConfirmButtonLoading={showModalConfirmButtonLoading}
       />
     </>
-  );
+  )
 };
 
 export default RoleListPage;

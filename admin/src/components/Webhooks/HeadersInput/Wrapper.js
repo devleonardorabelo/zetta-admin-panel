@@ -18,7 +18,7 @@ const Wrapper = styled.div`
     list-style-type: none;
     & + button {
       padding: 0;
-      color: #007eff;
+      color: #c128f7;
       font-size: 13px;
       font-weight: 500;
       outline: 0;
@@ -97,6 +97,6 @@ const Wrapper = styled.div`
       border: 1px solid #f64d0a;
     }
   }
-`;
+`
 
 export default Wrapper;

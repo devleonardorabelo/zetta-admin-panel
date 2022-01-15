@@ -82,13 +82,13 @@ const RoleListPage = () => {
         icon
         title={{
           label: formatMessage({
-            id: 'Settings.roles.title',
-            defaultMessage: 'roles',
+            id: "Settings.roles.title",
+            defaultMessage: "roles",
           }),
         }}
         content={formatMessage({
-          id: 'Settings.roles.list.description',
-          defaultMessage: 'List of roles',
+          id: "Settings.roles.list.description",
+          defaultMessage: "List of roles",
         })}
         // Show a loader in the header while requesting data
         isLoading={isLoading}
@@ -99,13 +99,15 @@ const RoleListPage = () => {
         <List
           title={formatMessage(
             {
-              id: `Settings.roles.list.title${results.length > 1 ? '.plural' : '.singular'}`,
+              id: `Settings.roles.list.title${
+                results.length > 1 ? ".plural" : ".singular"
+              }`,
             },
             { number: resultsCount }
           )}
           items={results}
           isLoading={isLoading}
-          customRowComponent={role => (
+          customRowComponent={(role) => (
             <RoleRow
               onClick={() => handleGoTo(role.id)}
               canUpdate={canUpdate}
@@ -117,7 +119,7 @@ const RoleListPage = () => {
                 {
                   icon: canUpdate ? <Pencil fill="#0e1622" /> : null,
                   onClick: () => {
-                    handleGoTo(role.id);
+                    handleGoTo(role.id)
                   },
                 },
                 {
@@ -133,17 +135,17 @@ const RoleListPage = () => {
         <ListButton>
           <Button
             onClick={handleToggleModalForCreatingRole}
-            icon={<Plus fill="#007eff" width="11px" height="11px" />}
+            icon={<Plus fill="#C128F7" width="11px" height="11px" />}
             label={formatMessage({
-              id: 'Settings.roles.list.button.add',
-              defaultMessage: 'Add new role',
+              id: "Settings.roles.list.button.add",
+              defaultMessage: "Add new role",
             })}
           />
         </ListButton>
       </RoleListWrapper>
       <UpgradePlanModal isOpen={isOpen} onToggle={handleToggle} />
     </>
-  );
+  )
 };
 
 export default RoleListPage;
